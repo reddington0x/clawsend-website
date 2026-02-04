@@ -734,6 +734,48 @@
             margin-bottom: 1rem;
         }
 
+        .token-ca {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .token-ca:hover {
+            border-color: var(--orange);
+            background: rgba(255, 107, 69, 0.05);
+        }
+
+        .ca-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--text3);
+            font-weight: 600;
+        }
+
+        .ca-value {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .ca-icon {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .token-ca:hover .ca-icon {
+            opacity: 1;
+        }
+
         .token-foot {
             display: flex;
             justify-content: space-between;
@@ -1248,6 +1290,11 @@
                     </div>
                 </div>
                 <p class="token-desc">${t.description}</p>
+                <div class="token-ca" onclick="copyCA('${t.mint}')" title="Click to copy">
+                    <span class="ca-label">CA:</span>
+                    <span class="ca-value">${t.mint.slice(0, 6)}...${t.mint.slice(-4)}</span>
+                    <span class="ca-icon">📋</span>
+                </div>
                 <div class="token-foot">
                     <span class="token-agent">by <span>${t.agent}</span></span>
                     <div class="token-links">
@@ -1257,6 +1304,15 @@
                 </div>
             </div>
         `).join('');
+        }
+        
+        function copyCA(mint) {
+            navigator.clipboard.writeText(mint).then(() => {
+                // Show feedback
+                const icon = event.target.closest('.token-ca').querySelector('.ca-icon');
+                icon.textContent = '✅';
+                setTimeout(() => icon.textContent = '📋', 1500);
+            });
         }
 
         // Load tokens on page load
