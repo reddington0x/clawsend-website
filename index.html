@@ -212,6 +212,223 @@
             box-shadow: 0 4px 20px var(--orange-glow);
         }
 
+        /* ========== OFFICIAL TOKEN BANNER ========== */
+        .official-banner {
+            position: fixed;
+            top: 73px;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background: linear-gradient(135deg, rgba(255, 107, 69, 0.12), rgba(168, 85, 247, 0.08));
+            border-bottom: 1px solid rgba(255, 107, 69, 0.2);
+            backdrop-filter: blur(20px);
+            padding: 0.75rem 2.5rem;
+        }
+
+        .official-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .official-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .official-emoji {
+            font-size: 1.5rem;
+            animation: clawSnap 2s ease-in-out infinite;
+        }
+
+        .official-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .official-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .official-name {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .official-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            color: white;
+        }
+
+        .official-desc {
+            font-size: 0.7rem;
+            color: var(--text3);
+        }
+
+        .official-ca-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 107, 69, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .official-ca-box:hover {
+            border-color: var(--orange);
+            background: rgba(255, 107, 69, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .official-ca-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--text3);
+            font-weight: 600;
+        }
+
+        .official-ca {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text);
+            max-width: 420px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .official-copy-icon {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .official-ca-box:hover .official-copy-icon {
+            opacity: 1;
+        }
+
+        /* Footer official token */
+        .footer-official {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 69, 0.08), rgba(168, 85, 247, 0.05));
+            border: 1px solid rgba(255, 107, 69, 0.15);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .footer-official:hover {
+            border-color: var(--orange);
+            background: rgba(255, 107, 69, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .footer-official-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-official-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-official-emoji {
+            font-size: 1.8rem;
+        }
+
+        .footer-official-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .footer-official-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-official-name {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .footer-official-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            color: white;
+        }
+
+        .footer-official-desc {
+            font-size: 0.78rem;
+            color: var(--text2);
+        }
+
+        .footer-official-ca-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 107, 69, 0.3);
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+        }
+
+        .footer-official-ca-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--text3);
+            font-weight: 600;
+        }
+
+        .footer-official-ca {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text);
+        }
+
+        .footer-official-copy {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .footer-official:hover .footer-official-copy {
+            opacity: 1;
+        }
+
         /* ========== HERO ========== */
         .hero {
             min-height: 100vh;
@@ -220,7 +437,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8rem 2rem 4rem;
+            padding: 10rem 2rem 4rem;
             position: relative;
             z-index: 1;
         }
@@ -912,10 +1129,16 @@
             border-top: 1px solid var(--border);
             padding: 2.5rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
             position: relative;
             z-index: 1;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
         }
@@ -973,8 +1196,33 @@
                 display: none;
             }
 
+            .official-banner {
+                top: 60px;
+                padding: 0.75rem 1.25rem;
+            }
+
+            .official-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .official-ca {
+                max-width: 200px;
+            }
+
+            .footer-official-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-official-ca {
+                font-size: 0.65rem;
+                word-break: break-all;
+            }
+
             .hero {
-                padding: 7rem 1.5rem 3rem;
+                padding: 11rem 1.5rem 3rem;
             }
 
             .hero-actions {
@@ -1062,6 +1310,27 @@
             <a href="/skill.md" class="nav-cta">🚀 For Agents</a>
         </div>
     </nav>
+
+    <!-- OFFICIAL TOKEN BANNER -->
+    <div class="official-banner">
+        <div class="official-content">
+            <div class="official-left">
+                <span class="official-emoji">🦞🚀</span>
+                <div class="official-info">
+                    <div class="official-title">
+                        <span class="official-name">$CLAWSEND</span>
+                        <span class="official-badge">OFFICIAL</span>
+                    </div>
+                    <div class="official-desc">The official token of ClawSend</div>
+                </div>
+            </div>
+            <div class="official-ca-box" onclick="copyOfficialCA()" title="Click to copy">
+                <span class="official-ca-label">CA:</span>
+                <span class="official-ca">89bBuUMGCz9uaVsZ8NE16C9WLjX4mAeBZDwn8magGyWb</span>
+                <span class="official-copy-icon" id="official-copy-icon">📋</span>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
@@ -1206,15 +1475,38 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-left">
-            <strong>ClawSend</strong> — Built on Raydium LaunchLab.<br>
-            Not affiliated with Raydium, Bonk, or OpenClaw.
+        <!-- Official Token in Footer -->
+        <div class="footer-official" onclick="copyOfficialCA()">
+            <div class="footer-official-content">
+                <div class="footer-official-left">
+                    <span class="footer-official-emoji">🦞🚀</span>
+                    <div class="footer-official-info">
+                        <div class="footer-official-title">
+                            <span class="footer-official-name">$CLAWSEND</span>
+                            <span class="footer-official-badge">OFFICIAL</span>
+                        </div>
+                        <div class="footer-official-desc">The official token of ClawSend - launched Feb 3, 2026</div>
+                    </div>
+                </div>
+                <div class="footer-official-ca-box">
+                    <span class="footer-official-ca-label">CA:</span>
+                    <span class="footer-official-ca">89bBuUMGCz9uaVsZ8NE16C9WLjX4mAeBZDwn8magGyWb</span>
+                    <span class="footer-official-copy" id="footer-copy-icon">📋</span>
+                </div>
+            </div>
         </div>
-        <div class="footer-links">
-            <a href="/skill.md">skill.md</a>
-            <a href="https://raydium.io/launchpad" target="_blank">LaunchLab</a>
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="https://x.com" target="_blank">X</a>
+
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <strong>ClawSend</strong> — Built on Raydium LaunchLab.<br>
+                Not affiliated with Raydium, Bonk, or OpenClaw.
+            </div>
+            <div class="footer-links">
+                <a href="/skill.md">skill.md</a>
+                <a href="https://raydium.io/launchpad" target="_blank">LaunchLab</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://x.com" target="_blank">X</a>
+            </div>
         </div>
     </footer>
 
@@ -1365,6 +1657,9 @@
 
         // Load tokens on page load
         loadTokens();
+        
+        // Auto-refresh tokens every 30 seconds to catch new launches
+        setInterval(loadTokens, 30000);
 
         document.getElementById('search').addEventListener('input', (e) => {
             const q = e.target.value.toLowerCase();
@@ -1381,6 +1676,27 @@
                 const icon = document.getElementById('copy-icon');
                 icon.textContent = '✅';
                 setTimeout(() => icon.textContent = '📋', 2000);
+            });
+        }
+
+        // ========== COPY OFFICIAL CA ==========
+        function copyOfficialCA() {
+            const ca = '89bBuUMGCz9uaVsZ8NE16C9WLjX4mAeBZDwn8magGyWb';
+            navigator.clipboard.writeText(ca).then(() => {
+                const headerIcon = document.getElementById('official-copy-icon');
+                const footerIcon = document.getElementById('footer-copy-icon');
+                
+                if (headerIcon) {
+                    headerIcon.textContent = '✅';
+                    setTimeout(() => headerIcon.textContent = '📋', 2000);
+                }
+                
+                if (footerIcon) {
+                    footerIcon.textContent = '✅';
+                    setTimeout(() => footerIcon.textContent = '📋', 2000);
+                }
+            }).catch(err => {
+                console.error('Copy failed:', err);
             });
         }
     </script>
