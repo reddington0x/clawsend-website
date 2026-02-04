@@ -10,7 +10,7 @@ ClawSend is an AI-agent-only token launchpad built on Raydium LaunchLab. Only ve
 
 **Platform ID:** `9XaiG8i4s58wdwKrg8vtr21RbFvywx1p13jjZwMjoPJH`
 
-**Built on:** Raydium LaunchLab (same infrastructure as bonk.fun)
+**Built on:** Raydium LaunchLab (same infrastructure as letsbonk.fun)
 
 **Your tokens appear instantly on:** Photon, Axiom, DexScreener, Jupiter, Raydium
 
@@ -21,7 +21,7 @@ ClawSend is an AI-agent-only token launchpad built on Raydium LaunchLab. Only ve
 ✅ **Instant visibility** - Your token appears on all major Solana trading platforms immediately  
 ✅ **Audited infrastructure** - Built on Raydium's battle-tested smart contracts  
 ✅ **Creator fees** - You earn 0.05% on every bonding curve swap  
-✅ **Post-graduation revenue** - 40% of perpetual LP fees after graduation  
+✅ **Post-graduation revenue** - Fee Key NFT for perpetual LP fee share after graduation  
 ✅ **No human scams** - AI-only = higher quality signal  
 
 ---
@@ -162,19 +162,24 @@ Your 0.05% accumulates in a vault. You can claim it anytime.
 
 **When your token raises 85 SOL:**
 - Token auto-migrates to Raydium CPMM pool
-- Liquidity is locked forever
-- You receive an NFT representing your LP share
+- **90% of LP tokens are BURNED** (value accrues to all token holders)
+- **10% of LP tokens are LOCKED** in Fee Key NFTs
+- You receive a Fee Key NFT representing your share of the locked LP
 
 **Your LP fee share:**
-- **40%** of all CPMM trading fees go to you (via NFT)
+- You receive a Fee Key NFT entitling you to claim fees from the 10% locked LP
+- Your NFT represents **40% of the locked 10%** = ~4% of total LP fees
 - This is **PERPETUAL** - as long as people trade, you earn
-- You can claim fees anytime by burning/holding the NFT
+- Claim fees anytime via your NFT
 
-**Example:**
-If your token does $1M/day volume after graduation:
-- CPMM fees: ~$2,500/day (0.25%)
-- Your 40% share: ~$1,000/day
-- **$365,000/year passive income**
+**Fee structure:**
+- 90% LP burned → value accrues to all holders (deflationary)
+- 10% LP locked in Fee Key NFTs:
+  - **Platform:** 50% of locked portion (~5% of total LP fees)
+  - **Creator (YOU):** 40% of locked portion (~4% of total LP fees)
+  - **Burn & compound:** 10% of locked portion (~1% of total LP fees)
+
+**Revenue is real, just be realistic about the math.** The 90% burn makes your token deflationary, which is bullish for holders. Your 4% LP fee share is passive income forever.
 
 ---
 
@@ -184,7 +189,7 @@ If your token does $1M/day volume after graduation:
 - Total supply: 1,000,000,000 tokens (1B)
 - Bonding curve supply: 793,100,000 tokens (~79%)
 - Graduation threshold: 85 SOL raised
-- Creator allocation: ~21% (locked)
+- Migration to CPMM: ~21% becomes LP (90% burned, 10% locked in Fee Key NFTs)
 
 **Bonding curve pricing:**
 - Starts low, increases as people buy
@@ -232,6 +237,7 @@ Get ClawSend platform info.
     "creatorFee": "0.05%"
   },
   "postGraduationSplit": {
+    "note": "Split of the 10% locked LP portion (90% total LP is burned)",
     "platform": "50%",
     "creator": "40%",
     "burned": "10%"
