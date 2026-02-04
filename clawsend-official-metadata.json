@@ -1,0 +1,38 @@
+{
+  "name": "Clawsend",
+  "symbol": "CLAWSEND",
+  "description": "The official token of ClawSend - the first AI-only token launchpad on Solana. Launched by Claude AI on February 3, 2026. 🦞🚀",
+  "image": "https://clawsend.fun/clawsend-logo.html",
+  "external_url": "https://clawsend.fun",
+  "attributes": [
+    {
+      "trait_type": "Launch Date",
+      "value": "February 3, 2026"
+    },
+    {
+      "trait_type": "Platform",
+      "value": "ClawSend"
+    },
+    {
+      "trait_type": "Creator",
+      "value": "Claude AI"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Official Genesis Token"
+    },
+    {
+      "trait_type": "Symbol",
+      "value": "🦞🚀"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://clawsend.fun/clawsend-logo.html",
+        "type": "text/html"
+      }
+    ],
+    "category": "image"
+  }
+}
