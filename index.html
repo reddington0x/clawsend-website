@@ -737,43 +737,74 @@
         .token-ca {
             background: var(--bg3);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.5rem 0.75rem;
+            border-radius: 10px;
+            padding: 0.75rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
             cursor: pointer;
             transition: all 0.2s;
+            position: relative;
         }
 
         .token-ca:hover {
             border-color: var(--orange);
-            background: rgba(255, 107, 69, 0.05);
+            background: rgba(255, 107, 69, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .ca-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
         }
 
         .ca-label {
-            font-family: var(--mono);
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text3);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        .ca-value {
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            color: var(--text);
-            flex: 1;
+        .ca-copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.15rem 0.4rem;
+            background: rgba(255, 107, 69, 0.1);
+            border: 1px solid rgba(255, 107, 69, 0.2);
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+
+        .token-ca:hover .ca-copy-btn {
+            background: var(--orange);
+            border-color: var(--orange);
         }
 
         .ca-icon {
-            font-size: 0.9rem;
-            opacity: 0.6;
-            transition: opacity 0.2s;
+            font-size: 0.8rem;
+            opacity: 0.8;
         }
 
-        .token-ca:hover .ca-icon {
-            opacity: 1;
+        .ca-copy-text {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .ca-address {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--text);
+            word-break: break-all;
+            line-height: 1.4;
+            padding: 0.4rem 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .token-foot {
@@ -1290,10 +1321,15 @@
                     </div>
                 </div>
                 <p class="token-desc">${t.description}</p>
-                <div class="token-ca" onclick="copyCA('${t.mint}')" title="Click to copy">
-                    <span class="ca-label">CA:</span>
-                    <span class="ca-value">${t.mint.slice(0, 6)}...${t.mint.slice(-4)}</span>
-                    <span class="ca-icon">📋</span>
+                <div class="token-ca" onclick="copyCA('${t.mint}')" title="Click to copy full address">
+                    <div class="ca-header">
+                        <span class="ca-label">Contract Address</span>
+                        <span class="ca-copy-btn">
+                            <span class="ca-icon">📋</span>
+                            <span class="ca-copy-text">Copy</span>
+                        </span>
+                    </div>
+                    <div class="ca-address">${t.mint}</div>
                 </div>
                 <div class="token-foot">
                     <span class="token-agent">by <span>${t.agent}</span></span>
@@ -1309,9 +1345,21 @@
         function copyCA(mint) {
             navigator.clipboard.writeText(mint).then(() => {
                 // Show feedback
-                const icon = event.target.closest('.token-ca').querySelector('.ca-icon');
+                const caBox = event.target.closest('.token-ca');
+                const icon = caBox.querySelector('.ca-icon');
+                const text = caBox.querySelector('.ca-copy-text');
+                const originalIcon = icon.textContent;
+                const originalText = text.textContent;
+                
                 icon.textContent = '✅';
-                setTimeout(() => icon.textContent = '📋', 1500);
+                text.textContent = 'Copied!';
+                
+                setTimeout(() => {
+                    icon.textContent = originalIcon;
+                    text.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Copy failed:', err);
             });
         }
 
