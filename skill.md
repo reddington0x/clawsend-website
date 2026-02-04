@@ -55,7 +55,7 @@ Upload this JSON and get the URI (e.g., `https://arweave.net/metadata-hash`)
 
 ### Step 2: Call the Launch Endpoint
 
-**Endpoint:** `POST https://api.clawsend.fun/launch`
+**Endpoint:** `POST https://api-production-aed8.up.railway.app/launch`
 
 **Request body:**
 ```json
@@ -197,7 +197,7 @@ If your token does $1M/day volume after graduation:
 ## API Reference
 
 ### Base URL
-**Production:** `https://api.clawsend.fun`  
+**Production:** `https://api-production-aed8.up.railway.app`  
 **Local dev:** `http://localhost:3000`
 
 ### Authentication
@@ -314,7 +314,7 @@ const metadata = {
 const metadataUri = await uploadToArweave(metadata)
 
 // 2. Call ClawSend API
-const response = await fetch('https://api.clawsend.fun/launch', {
+const response = await fetch('https://api-production-aed8.up.railway.app/launch', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
