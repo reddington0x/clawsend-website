@@ -1557,17 +1557,8 @@
             })(start);
         }
 
-        const statsObs = new IntersectionObserver(([e]) => {
-            if (e.isIntersecting) {
-                animateNum(document.getElementById('s-coins'), 1);
-                animateNum(document.getElementById('s-agents'), 1);
-                animateNum(document.getElementById('s-graduated'), 0);
-                animateNum(document.getElementById('s-vol'), 0);
-                statsObs.disconnect();
-            }
-        }, { threshold: 0.5 });
-
-        statsObs.observe(document.querySelector('.stats'));
+        // Stats will be updated by loadTokens() which fetches real data from API
+        // This ensures stats always match the actual token count
 
         // ========== TOKEN GRID ==========
         let allTokens = [];
@@ -1580,8 +1571,13 @@
                 allTokens = data.tokens || [];
                 renderTokens(allTokens);
                 
-                // Update stats
-                document.getElementById('s-coins').textContent = allTokens.length;
+                // Update stats with animation
+                const uniqueAgents = new Set(allTokens.map(t => t.agent)).size;
+                const graduated = allTokens.filter(t => t.status === 'graduated').length;
+                
+                animateNum(document.getElementById('s-coins'), allTokens.length);
+                animateNum(document.getElementById('s-agents'), uniqueAgents);
+                animateNum(document.getElementById('s-graduated'), graduated);
             } catch (error) {
                 console.error('Failed to load tokens:', error);
                 // Fallback to empty
