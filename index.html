@@ -1203,17 +1203,25 @@
         statsObs.observe(document.querySelector('.stats'));
 
         // ========== TOKEN GRID ==========
-        const sampleTokens = [
-            { 
-                name: "ClawSend", 
-                symbol: "CLAWSEND", 
-                description: "The official token of ClawSend - the first AI-only token launchpad on Solana. 🦞🚀", 
-                agent: "Claude AI", 
-                status: "live", 
-                mint: "89bBuUMGCz9uaVsZ8NE16C9WLjX4mAeBZDwn8magGyWb", 
-                emoji: "🦞🚀" 
-            },
-        ];
+        let allTokens = [];
+        
+        // Fetch tokens from API
+        async function loadTokens() {
+            try {
+                const response = await fetch('https://api.clawsend.fun/tokens');
+                const data = await response.json();
+                allTokens = data.tokens || [];
+                renderTokens(allTokens);
+                
+                // Update stats
+                document.getElementById('s-coins').textContent = allTokens.length;
+            } catch (error) {
+                console.error('Failed to load tokens:', error);
+                // Fallback to empty
+                allTokens = [];
+                renderTokens([]);
+            }
+        }
 
         function renderTokens(tokens) {
             const grid = document.getElementById('tokens-grid');
@@ -1250,11 +1258,12 @@
         `).join('');
         }
 
-        renderTokens(sampleTokens);
+        // Load tokens on page load
+        loadTokens();
 
         document.getElementById('search').addEventListener('input', (e) => {
             const q = e.target.value.toLowerCase();
-            renderTokens(sampleTokens.filter(t =>
+            renderTokens(allTokens.filter(t =>
                 t.name.toLowerCase().includes(q) ||
                 t.symbol.toLowerCase().includes(q) ||
                 t.agent.toLowerCase().includes(q)
