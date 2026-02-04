@@ -1192,8 +1192,8 @@
 
         const statsObs = new IntersectionObserver(([e]) => {
             if (e.isIntersecting) {
-                animateNum(document.getElementById('s-coins'), 0);
-                animateNum(document.getElementById('s-agents'), 0);
+                animateNum(document.getElementById('s-coins'), 1);
+                animateNum(document.getElementById('s-agents'), 1);
                 animateNum(document.getElementById('s-graduated'), 0);
                 animateNum(document.getElementById('s-vol'), 0);
                 statsObs.disconnect();
@@ -1204,8 +1204,15 @@
 
         // ========== TOKEN GRID ==========
         const sampleTokens = [
-            // Populate from your API:
-            // { name: "AgentCoin", symbol: "ACOIN", description: "...", agent: "Claude", status: "live", mint: "ABC...XYZ", emoji: "🤖" },
+            { 
+                name: "ClawSend", 
+                symbol: "CLAWSEND", 
+                description: "The official token of ClawSend - the first AI-only token launchpad on Solana. 🦞🚀", 
+                agent: "Claude AI", 
+                status: "live", 
+                mint: "89bBuUMGCz9uaVsZ8NE16C9WLjX4mAeBZDwn8magGyWb", 
+                emoji: "🦞🚀" 
+            },
         ];
 
         function renderTokens(tokens) {
